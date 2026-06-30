@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard To-Do List - Karyawan</title>
+    <!-- Menghubungkan ke file CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="todo-body">
+
+    <div class="todo-container">
+        
+        <!-- 1. BAGIAN PROFILE & TIME -->
+        <header class="todo-header">
+            <div class="profile-info">
+                <h3>Ari Setiawan</h3>
+                <p>Jabatan: Web Developer</p>
+            </div>
+            <div class="time-info">
+                <!-- ID ini akan diisi tanggal otomatis oleh JavaScript -->
+                <p id="current-date">-</p>
+            </div>
+        </header>
+
+        <!-- 2. FORM INPUT TUGAS (Text Area & Kategori Prioritas) -->
+        <section class="todo-form-section">
+            <form id="todo-form">
+                <div class="form-group">
+                    <label for="task-input">Tulis Tugas Baru:</label>
+                    <textarea id="task-input" placeholder="Contoh: Menyelesaikan laporan bug kodingan halaman login..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="priority-input">Level Prioritas:</label>
+                    <select id="priority-input">
+                        <option value="Low">🟢 Low (Rendah)</option>
+                        <option value="Medium">🟡 Medium (Sedang)</option>
+                        <option value="High">🔴 High (Tinggi)</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-add-task">Tambah Tugas</button>
+            </form>
+        </section>
+
+        <!-- TOMBOL HAPUS MASSAL -->
+        <div class="todo-controls">
+            <button id="delete-all-btn" class="btn-delete-all">Hapus Semua Tugas</button>
+        </div>
+
+        <!-- 3. AREA DAFTAR TUGAS (Sistem Dua Kolom: To Do & Done) -->
+        <main class="todo-columns">
+            
+            <!-- KOLOM KIRI: TO DO -->
+            <div class="column-box">
+                <h2>📋 Daftar To Do (Sedang Dikerjakan)</h2>
+                <div class="task-list" id="todo-list">
+                    <!-- Tugas baru yang kamu ketik akan muncul otomatis di sini via JS -->
+                </div>
+            </div>
+
+            <!-- KOLOM KANAN: DONE -->
+            <div class="column-box">
+                <h2>✅ Daftar Done (Selesai)</h2>
+                <div class="task-list" id="done-list">
+                    <!-- Tugas yang dicentang akan melompat otomatis ke sini via JS -->
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Menghubungkan ke file JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
